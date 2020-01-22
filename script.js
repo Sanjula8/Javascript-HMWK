@@ -1,4 +1,4 @@
-// DOM Elements
+// DOM Elements -- Document Object Model
 var resultEl = document.getElementById("result");
 var lengthEl = document.getElementById("length");
 var uppercaseEl = document.getElementById("uppercase");
@@ -16,7 +16,7 @@ var randomFunc = {
 };
 
 // Generate Event Listen
-generate.addEventListener("click", () => {
+generate.addEventListener("click", function() {
 	var length = +lengthEl.value;
 	var hasLower = lowercaseEl.checked;
 	var hasUpper = uppercaseEl.checked;
@@ -33,7 +33,7 @@ generate.addEventListener("click", () => {
 });
 
 // Copy to Clipboard
-clipboard.addEventListener("click", () => {
+clipboard.addEventListener("click", function() {
 	var textarea = document.createElement("textarea");
 	var password = resultEl.innerText;
 
@@ -77,7 +77,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 			generatePassword += randomFunc[funName]();
 		});
 	}
-
+	// Slice returns the selected elements in the array as a new array object.  In this case, the password is being returned as a new object.
 	var finalPassword = generatePassword.slice(0, length);
 
 	return finalPassword;
