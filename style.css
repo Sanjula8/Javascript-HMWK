@@ -140,7 +140,6 @@ button[disabled] {
 .setting {
 	display: flex;
 	justify-self: space-between;
-	align: center;
 	margin: 15px, 0;
 	padding: 10px;
 }
