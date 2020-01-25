@@ -58,6 +58,19 @@ clipboard.addEventListener("click", function() {
 	// appendChild puts it in the body.  Select, then use the exec.Command to copy.
 });
 
+// Clear Function -- Couldn't get this to work.
+
+// input.addEventListener(
+// 	"click",
+// 	function() {
+// 		var input = document.querySelector("#clear");
+// 		var textareaClear = document.querySelector("#result");
+
+// 		textareaclear.value = "";
+// 	},
+// 	false
+// );
+
 // Generate Password Function
 function generatePassword(lower, upper, number, symbol, length) {
 	// 1. Intialize Password Variable (string that will build on to create password)
@@ -125,7 +138,7 @@ function getRandomNumber() {
 	return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 
-// In Char - 0 starts at 48 and we need to go up to 9, which is at 57.  Now, we use a span of 10, to include 0-9.
+// In Char - 0 starts at 48 and we need to go up to 9, which is at 57.  Multiply by 10 to include 0-9.
 
 // console.log(getRandomNumber());
 
