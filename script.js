@@ -30,14 +30,19 @@ generate.addEventListener("click", function() {
 
 	// console.log(has.Lower, hasUpper, hasNumber, hasSymbol); - To see if they're checked or not.
 
-	resultEl.innerText = generatePassword(
-		hasLower,
-		hasUpper,
-		hasNumber,
-		hasSymbol,
-		length
-	);
+	if (length < 8 || length > 128) {
+		alert("Check yo'self before you wreck yo'self.");
+	} else {
+		resultEl.innerText = generatePassword(
+			hasLower,
+			hasUpper,
+			hasNumber,
+			hasSymbol,
+			length
+		);
+	}
 });
+// });
 
 // Copy to Clipboard
 clipboard.addEventListener("click", function() {
@@ -58,18 +63,13 @@ clipboard.addEventListener("click", function() {
 	// appendChild puts it in the body.  Select, then use the exec.Command to copy.
 });
 
-// Clear Function -- Couldn't get this to work.
+// Clear Function
 
-// input.addEventListener(
-// 	"click",
-// 	function() {
-// 		var input = document.querySelector("#clear");
-// 		var textareaClear = document.querySelector("#result");
+document.getElementById("clear").addEventListener("click", function() {
+	var textareaClear = document.querySelector("#result");
 
-// 		textareaclear.value = "";
-// 	},
-// 	false
-// );
+	textareaClear.value = "";
+});
 
 // Generate Password Function
 function generatePassword(lower, upper, number, symbol, length) {
