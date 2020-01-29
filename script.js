@@ -32,6 +32,7 @@ generate.addEventListener("click", function() {
 
 	if (length < 8 || length > 128) {
 		alert("Check yo'self before you wreck yo'self.");
+		alert("Please enter a length between 8 and 128 characters");
 	} else {
 		resultEl.innerText = generatePassword(
 			hasLower,
